@@ -1,0 +1,358 @@
+/* ==========================================================================
+   RESET GENERAL Y CONFIGURACIÓN BASE
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* Modificado: Bajamos la opacidad del color (0.65) para que el fondo de ingredientes se luzca mucho más */
+    background-image: linear-gradient(rgba(255, 235, 240, 0.65), rgba(230, 205, 185, 0.7)), 
+                      url('https://images.unsplash.com/photo-1495521821757-a1efb6729352?q=80&w=1920&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #4a3b32;
+}
+
+/* ==========================================================================
+   HEADER / NAVEGACIÓN
+   ========================================================================== */
+.header-principal {
+    background-color: #5c4033; /* Marrón chocolate */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+.header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-enlace {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 12px;
+}
+
+.logo-img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffb6c1;
+}
+
+.logo-texto {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.logo-texto span {
+    color: #ffb6c1; /* Rosa claro */
+}
+
+.navegacion-menu {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-boton {
+    color: #5c4033;
+    background-color: #ffb6c1;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nav-boton:hover {
+    background-color: #ffa6b5;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   SECCIÓN HERO / BIENVENIDA
+   ========================================================================== */
+.hero-presentacion {
+    max-width: 850px;
+    margin: 50px auto 20px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.hero-contenido h1 {
+    font-size: 36px;
+    color: #422d22;
+    margin-bottom: 15px;
+    text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+}
+
+.hero-contenido p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #574337;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   ESTILO DE LOS GLOBITOS (CARDS DE RECETAS)
+   ========================================================================== */
+.contenedor-recetas {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.categoria-seccion {
+    padding-top: 10px;
+}
+
+.receta-globo {
+    background-color: rgba(255, 255, 255, 0.97);
+    border-radius: 28px; /* Redondeado tipo globito */
+    padding: 35px;
+    margin-bottom: 45px;
+    box-shadow: 0 12px 30px rgba(92, 64, 51, 0.15);
+    border: 1px solid rgba(255, 182, 193, 0.5);
+}
+
+.receta-encabezado {
+    margin-bottom: 22px;
+}
+
+.etiqueta {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.badge-entrada { background-color: #a07865; }
+.badge-principal { background-color: #845e4c; }
+.badge-postre { background-color: #dba3bb; }
+
+.receta-encabezado h2 {
+    font-size: 28px;
+    color: #5c4033;
+    margin-bottom: 6px;
+}
+
+.tiempo-coccion {
+    font-size: 13px;
+    color: #8c7365;
+    font-weight: 600;
+    display: block;
+}
+
+/* Contenedor de Imagen */
+.receta-imagen-contenedor {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.receta-foto {
+    width: 100%;
+    max-height: 380px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+/* Grilla de Distribución Interna */
+.receta-detalles {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 35px;
+    margin-bottom: 20px;
+}
+
+.bloque-ingredientes h3,
+.bloque-preparacion h3 {
+    font-size: 19px;
+    color: #5c4033;
+    margin-bottom: 14px;
+    border-bottom: 2px solid #ffb6c1;
+    padding-bottom: 4px;
+}
+
+.lista-items {
+    list-style-type: none;
+}
+
+.lista-items li {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 9px;
+    position: relative;
+    padding-left: 18px;
+    color: #55443b;
+}
+
+.lista-items li::before {
+    content: "■";
+    color: #845e4c;
+    font-size: 10px;
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+.texto-pasos {
+    font-size: 15px;
+    line-height: 1.7;
+    text-align: justify;
+    color: #55443b;
+}
+
+/* Componente web añadido: Caja de Tips del Chef */
+.chef-tip-box {
+    background-color: #fff0f2;
+    border-left: 5px solid #ffb6c1;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: #70484f;
+    margin-bottom: 25px;
+}
+
+/* ==========================================================================
+   NUEVO CONTROL DE VIDEO REPRODUCTOR (REQUERIMIENTO MULTIMEDIA NATIVO)
+   ========================================================================== */
+.bloque-video {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px dashed rgba(92, 64, 51, 0.25);
+}
+
+.video-titulo {
+    font-weight: 700;
+    color: #5c4033;
+    display: block;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.video-wrapper {
+    max-width: 500px;
+    width: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    border: 1px solid #e8dec9;
+}
+
+.video-wrapper video {
+    width: 100%;
+    display: block;
+    background-color: #000000;
+}
+
+/* ==========================================================================
+   PIE DE PÁGINA (FOOTER) MEJORADO
+   ========================================================================== */
+.footer-principal {
+    background-color: #5c4033;
+    color: #ffffff;
+    margin-top: 60px;
+    border-top: 4px solid #ffb6c1;
+}
+
+.footer-contenido {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-info h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #ffb6c1;
+}
+
+.footer-info p {
+    font-size: 14px;
+    color: #decbc0;
+}
+
+.footer-newsletter h4 {
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.form-falso {
+    display: flex;
+    gap: 8px;
+}
+
+.form-falso input {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    width: 220px;
+    background-color: #f5eae4;
+}
+
+.form-falso button {
+    background-color: #ffb6c1;
+    color: #5c4033;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.footer-derechos {
+    text-align: center;
+    padding: 15px 20px;
+    background-color: #4a3227;
+    font-size: 13px;
+    color: #c4b0a5;
+}
+
+/* ==========================================================================
+   DISEÑO RESPONSIVO
+   ========================================================================== */
+@media (max-width: 768px) {
+    .receta-detalles {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    .header-container, .footer-contenido {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .form-falso {
+        justify-content: center;
+    }
+}
